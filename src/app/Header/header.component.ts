@@ -1,4 +1,4 @@
-import {Component} from '@angular/core'
+import {Component, EventEmitter, Output} from '@angular/core'
 
 @Component({
     selector: 'acp-header',
@@ -6,5 +6,13 @@ import {Component} from '@angular/core'
 })
 export class HeaderComponent
 {
-
+    @Output() onFeatureSelected = new EventEmitter<string>();
+    navigateToRecipes()
+    {
+        this.onFeatureSelected.emit("recipe");
+    }
+    navigateToShoppingList()
+    {
+        this.onFeatureSelected.emit("shopping-list");
+    }
 }

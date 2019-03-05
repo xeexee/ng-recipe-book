@@ -1,8 +1,11 @@
 <div class="row">
   <div class="col-md-5">
-    <acp-recipe-list></acp-recipe-list>
+    <acp-recipe-list (recipeSelected)="onSelectRecipe($event)"></acp-recipe-list>
   </div>
   <div class="col-md-7">
-    <acp-recipe-detail></acp-recipe-detail>
+    <acp-recipe-detail *ngIf="currentRecipe; else infoText" [recipe]="currentRecipe"></acp-recipe-detail>
+    <ng-template #infoText>
+      <p>Please select a recipe!</p>
+    </ng-template>
   </div>
 </div>
