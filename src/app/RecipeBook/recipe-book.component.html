@@ -3,9 +3,6 @@
     <acp-recipe-list></acp-recipe-list>
   </div>
   <div class="col-md-7">
-    <acp-recipe-detail *ngIf="currentRecipe; else infoText" [recipe]="currentRecipe"></acp-recipe-detail>
-    <ng-template #infoText>
-      <p>Please select a recipe!</p>
-    </ng-template>
+    <router-outlet></router-outlet>
   </div>
 </div>

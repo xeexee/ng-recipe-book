@@ -1,9 +1,12 @@
-<acp-header (onFeatureSelected)="onNavigate($event)"></acp-header>
+<acp-header></acp-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+      <!--
       <acp-recipe-book *ngIf="currentFeature === 'recipe'"></acp-recipe-book>
       <acp-shopping-list *ngIf="currentFeature === 'shopping-list'"></acp-shopping-list>
+      -->
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

@@ -1,20 +1,21 @@
-import { Component } from '@angular/core';
-import { ShoppingListService } from './ShoppingList/shopping-list.service';
+import { Component, OnInit } from '@angular/core';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ ShoppingListService ]
+  providers: []
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   currentFeature: string = "recipe";
 
-  constructor(private shoppingListService: ShoppingListService) {}
-
-  onNavigate(featureSelected: string)
+  ngOnInit()
   {
-    this.currentFeature = featureSelected;
+    firebase.initializeApp({
+      apiKey: "AIzaSyC_WGBEsP2ScaYkOBA1w4nAqkzQq80ec18",
+      authDomain: "ng-recipe-book-829ac.firebaseapp.com"
+    })
   }
 }
